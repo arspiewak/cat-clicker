@@ -20,7 +20,6 @@
 	font-size: 2em;
 }
 
-.currentcat {
-	background-color: lightGray;
-	min-height: 500px;
+.currimage {
+	width: 75%;
 }

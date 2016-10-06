@@ -14,6 +14,7 @@ var catList = [
 
 /* Object creation for a Cat object */
 function Cat(name, imageSrc, index) {
+	cat = this;					/* Cat object reference for event handlers */
 	this.name = name;			/* Name of the cat */
 	this.imageSrc = imageSrc;	/* Relative filename of image */
 	this.index = index;			/* Unique reference # for each cat */
@@ -43,6 +44,34 @@ function Cat(name, imageSrc, index) {
 		'alt': 'Cat picture'
 	}).appendTo(catFrame);
 
+	/*	Install hover processing: When the mouse pointer enters the new catFrame,
+		display the cat's info in #currentcat. When it leaves, clear #currentcat.
+	 */
+	function displayAsCurrent () {
+	 	var currentCat = $('#currentcat');
+
+	 	/* Display the image first */
+	 	var currentCatImg = $('<img>', {
+	 		'class': 'currimage img-responsive col-md-12',
+	 		'src': imageSrc,
+	 		'alt': 'Current cat\'s picture'
+	 	}).appendTo(currentCat);
+
+	 	/* Display name and count under the image */
+	 	var currCatDispCount = $('<div class="cattext col-md-12"><strong>' + name +
+	 		'</strong> Click count: <span id="dispCount"> -1</span></div>'
+	 		).appendTo(currentCat);
+
+	 	/* Set the counter span's text to match that of the catframe above */
+	 	$('#dispCount').text(catCountSpan.text());
+	 };
+
+	 function clearCurrentDisplay () {
+	 	$('#currentcat').empty('');
+	 };
+
+	 catFrame.hover(displayAsCurrent, clearCurrentDisplay);
+
 	/*	Define counter function & use it to initialize the numeric counter.
 		Note that the count is stored in the text of a span whose ID is of the
 		form counterN, where N is the index of the individual Cat.
@@ -51,6 +80,7 @@ function Cat(name, imageSrc, index) {
 	function incrementCount() {
 		var n = catCountSpan.text();
 		catCountSpan.text(++n);
+	 	$('#dispCount').text(n);
 	}
 
 	/* Install the click-counting callback function and call it to initialize */
