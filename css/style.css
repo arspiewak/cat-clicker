@@ -6,8 +6,8 @@
 } */
 
 .catimage {
-	width: 75%;
-	height: auto;
+	width: auto;
+	height: 150px;
 	padding: 5px;
 }
 
@@ -16,6 +16,6 @@
 	margin: 5px;
 }
 
-.counter {
+.cattext {
 	font-size: 2em;
 }
