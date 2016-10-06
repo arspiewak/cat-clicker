@@ -1,0 +1,21 @@
+/* body {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+} */
+
+.catimage {
+	width: 75%;
+	height: auto;
+	padding: 5px;
+}
+
+.catframe {
+	border: 2px solid black;
+	margin: 5px;
+}
+
+.counter {
+	font-size: 2em;
+}
