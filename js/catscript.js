@@ -30,7 +30,7 @@ function Cat(name, imageSrc, index) {
 	/* Create Kitty's presence */
 
 	catFrame = $('<div></div>', {
-		'class': 'catframe col-md-5'
+		'class': 'catframe row'
 	}).appendTo(catRow);
 
 	catDispCount = $('<div class="cattext col-md-9"><strong>' + name +
@@ -38,7 +38,7 @@ function Cat(name, imageSrc, index) {
 		'"> -1</span></div>').appendTo(catFrame);
 
 	catImage = $('<img>', {
-		'class': 'catimage img-responsive col-md-3',
+		'class': 'catimage img-responsive col-md-2',
 		'src': imageSrc,
 		'alt': 'Cat picture'
 	}).appendTo(catFrame);

@@ -13,6 +13,19 @@
 </head>
 <body>
 	<h1>Cat Clicker</h1>
-	<div class="row" id="catrow">
-	</div> <!-- row -->
+	<!--
+		The main display row has the cat list on the left and a large display
+		of the "current cat" on the right.
+	-->
+	<div class="row" id="mainrow">
+		<!--
+			catrow holds the list display of Cats, which is built by script. Note
+			that the catrow is not really a row (which it originally was), but a
+			column, one-third the width of mainrow.
+		-->
+		<div class="col-md-4" id="catrow">
+		</div> <!-- catrow -->
+		<div class="currentcat col-md-8">
+		</div> <!-- currentcat -->
+	</div> <!-- mainrow -->
 </body>
